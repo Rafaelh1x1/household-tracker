@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en" data-theme="terminal">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>household tracker</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <h1 class="title">household_tracker</h1>
+      <div class="theme-picker">
+        <label for="theme-select">theme:</label>
+        <select id="theme-select">
+          <option value="terminal">terminal (green)</option>
+          <option value="amber">terminal (amber)</option>
+          <option value="paper">paper (light)</option>
+          <option value="rose">rose</option>
+          <option value="ocean">ocean</option>
+          <option value="dracula">dracula</option>
+        </select>
+      </div>
+    </header>
+
+    <main>
+      <section class="list-panel" data-list="todos">
+        <div class="panel-header">
+          <h2>// todos</h2>
+          <button class="add-section-btn" type="button" data-list="todos">
+            + section
+          </button>
+        </div>
+        <form class="add-form" data-list="todos">
+          <input
+            type="text"
+            class="item-input"
+            placeholder="add a task..."
+            maxlength="200"
+            required
+          />
+          <select class="section-select" data-list="todos"></select>
+          <button type="submit">add</button>
+        </form>
+        <div class="sections-container" id="todos-sections"></div>
+      </section>
+
+      <section class="list-panel" data-list="groceries">
+        <div class="panel-header">
+          <h2>// groceries</h2>
+          <button class="add-section-btn" type="button" data-list="groceries">
+            + section
+          </button>
+        </div>
+        <form class="add-form" data-list="groceries">
+          <input
+            type="text"
+            class="item-input"
+            placeholder="add an item..."
+            maxlength="200"
+            required
+          />
+          <select class="section-select" data-list="groceries"></select>
+          <button type="submit">add</button>
+        </form>
+        <div class="sections-container" id="groceries-sections"></div>
+      </section>
+    </main>
+
+    <footer>
+      <span class="cursor">_</span>
+      <span class="status" id="status"></span>
+    </footer>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>
