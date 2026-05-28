@@ -108,6 +108,7 @@
   --fg-dim: #d395d0;
   --fg-muted: #9b9b9b;
   --accent: #1a6b1a;
+  --accent-2: #dbbd15;
   --border: #d8d4cc;
   --done: #b8b8b8;
   --danger: #c0392b;
@@ -207,7 +208,7 @@ main {
 
 .list-panel h2 {
   margin: 0 0 1rem;
-  color: var(--accent);
+  color: var(--accent-2, var(--accent));
   font-size: 1.1rem;
   letter-spacing: 0.5px;
 }
@@ -243,7 +244,7 @@ main {
 
 .add-form button {
   background: var(--bg);
-  color: var(--accent);
+  color: var(--accent-2, var(--accent));
   border: 1px solid var(--accent);
   border-radius: var(--radius);
   padding: 0.5rem 1rem;
